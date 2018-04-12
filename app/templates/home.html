@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="hero">
+    <div class="container">
+        <div class="typewriter">
+            <h1 class="pt-4 text-center text-light dancing-font">
+                The choice to be<span class="text-warning home-display-word bad-script p-4">healthy</span>is yours
+            </h1>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        {% if not session.logged_in%}
+        <p class="lead text-center">
+            <a href={{url_for('login')}} class="btn btn-success w-25">Login</a>
+            <br>
+            <br>
+            <a href={{url_for('register')}} class="btn w-25 btn-primary">Sign Up</a>
+        </p>
+        <br>
+        {% endif %}
+{% endblock %}

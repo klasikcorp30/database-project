@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<form class="form-login" method="post">
+  <h2 class="text-center text-light">Login</h2>
+  {% if error %}
+    <div class="alert alert-danger">
+      <strong>Error:</strong> {{ error }}
+    </div>
+  {% endif %}
+  <div class="hero">
+  <div class="container col-md-6">
+      <div class="input-group">
+        <form method="POST" action="{{url_for('login')}}">
+          <!-- <span class="input-group-addon"><i class="fa fa-user mr-2"></i></span> -->
+          <input id="email" type="text" class="form-control pl-1" name="username" placeholder="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+          <!-- <span class="input-group-addon"><i class="fas fa-lock mr-2"></i></span> -->
+          <input id="password" type="password" class="form-control mt-5" name="password" placeholder="Password">
+        </div>
+  <button class="btn btn-success center-block mt-3" type="submit">Sign in</button>
+  <br>
+  <p class="lead raleway float-right text-light">Don't have an accout yet? <a href={{url_for('register')}}>Sign up</a></p> 
+  
+      </form>
+  </div>
+</div>
+</form>
+{% endblock %}

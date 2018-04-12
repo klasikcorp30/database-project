@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<form action={{url_for('login')}} method="POST">
+    <div class="form-group col-md-6 container">
+        {{form.csrf_token}}
+    
+        {{form.first_name.label(class="text-light")}}
+        {{form.first_name(class="form-control")}}
+
+        {{form.last_name.label(class="text-light")}}
+        {{form.last_name(class="form-control")}}
+           
+
+        {{form.email.label(class="text-light")}}
+        {{form.email(class="form-control")}}
+
+        {{form.dob.label(class="text-light")}}
+        {{form.dob(class="form-control")}}
+
+        {{form.username.label(class="text-light")}}
+        {{form.username(class="form-control")}}
+
+        {{form.password.label(class="text-light")}}
+        {{form.password(class="form-control")}}
+
+        {{form.retype_password.label(class="text-light")}}
+        {{form.retype_password(class="form-control")}}
+        <br>
+        {{form.submit(class="btn btn-primary")}}
+    </div>    
+</form>
+
+{% endblock %}
